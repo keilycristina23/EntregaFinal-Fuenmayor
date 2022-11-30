@@ -1,12 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import {componentesNav} from './components/navBar/navBar'
-//import './App.css'
 
-export function App() {
+import { ItemListContainer } from './components/itemListContainer/itemlistContainer'
+import { ComponentesNav } from './components/NavBar/navBar'
 
-  return (
-<componentesNav />  
+
+function App() {
+   
+
+  const greetingsItem='Welcome to our space'
+
+   return (
+    <>
+    <ComponentesNav /> 
+    <ItemListContainer greetings={greetingsItem} />
+    </>
   )
-}
+ }
 
+export default App
