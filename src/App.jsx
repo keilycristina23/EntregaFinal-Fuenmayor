@@ -2,7 +2,6 @@
 import { ItemListContainer } from './components/itemListContainer/itemlistContainer'
 import { ComponentesNav } from './components/NavBar/navBar'
 
-
 function App() {
    
 
@@ -12,6 +11,7 @@ function App() {
     <>
     <ComponentesNav /> 
     <ItemListContainer greetings={greetingsItem} />
+      
     </>
   )
  }
