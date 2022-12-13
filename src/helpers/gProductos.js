@@ -40,16 +40,16 @@ export const getProductos = () => {
 
 export const getProductosCategoria = (categoria) => {
   return new Promise((resolve) => {
-      const productos = productos.filter(producto => producto.categoria === categoria);
+      const productosFiltrados = productos.filter(producto => producto.categoria === categoria);
       setTimeout(() => {
           resolve(productos);
       }, 2000);
   });
 }
 
-export const getProducto = (id) => {
+export const getProducto = (Id) => {
   return new Promise((resolve) => {
-      const prod = productos.find(p => p.id === parseInt(id))
+      const prod = productos.find(p => p.id === parseInt(Id))
       setTimeout(() => {
           resolve(prod)
       }, 1000)

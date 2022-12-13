@@ -25,7 +25,7 @@ export const ComponentesNav = () => {
               <Nav.Link href="https://www.instagram.com/skinstudio.ar/">CONTACTO</Nav.Link>
               
               <NavDropdown title="TRATAMIENTOS" id="collasible-nav-dropdown">
-                <NavLink to="/categoria/tratamientosÑFaciales">TRATAMIENTOS FACIALES</NavLink>
+                <NavLink to="/categoria/tratamientosFaciales">TRATAMIENTOS FACIALES</NavLink>
                 <br></br>
                 <NavLink to="/categoria/tratamientosCorporales">TRATAMIENTOS CORPORALES</NavLink>
               <NavDropdown.Divider />
