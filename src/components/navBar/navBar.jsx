@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -20,11 +21,19 @@ export const ComponentesNav = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-              <Nav.Link href="#features">E-SHOP</Nav.Link>
-            <Nav.Link href="#pricing">UBICACION</Nav.Link>
-            <NavDropdown title="TRATAMIENTOS" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">TRATAMIENTOS FACIALES</NavDropdown.Item>
-              <NavDropdown.Item href="https://www.instagram.com/skinstudio.ar/">TRATAMIENTOS CORPORALES</NavDropdown.Item>
+              <NavLink className={({isActive}) =>isActive ? 'btn btn-success': 'btn btn-outline-success'} href="#features">E-SHOP</NavLink>
+              <Nav.Link href="#pricing">UBICACION</Nav.Link>
+              
+              <NavDropdown title="TRATAMIENTOS" id="collasible-nav-dropdown">
+                
+
+                <NavLink to="/categoria/tratamientosFaciales">TRATAMIENTOS FACIALES</NavLink>
+                <br></br>
+                <NavLink to="/categoria/tratamientosCorporales">TRATAMIENTOS CORPORALES</NavLink>
+
+                
+
+
               <NavDropdown.Item href="#action/3.3">PESTAÑAS</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">

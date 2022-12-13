@@ -27,7 +27,6 @@ export const ItemListContainer = ({ greetings }) => {
       <h1 className='text-warning'>{greetings}</h1>
      
       { cargando ? <h2>Cargando productos...</h2> : <ItemList productos = {productos} /> }
-      <ItemList productos={productos} /> 
       <ItemCount />
       
     </>

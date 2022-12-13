@@ -1,50 +1,49 @@
 export const productos = [
   {
     id: '1',
-    Name: 'LimpiezaFacialProfunda',
-    Descripcion: '',
-    Precio:'100',
-    stock: '100',
-    hastash:'',
-    foto: '../'
+    name: 'Limpieza Facial Profunda',
+    descripcion: 'Shaalalalala',
+    precio: '100',
+    categoria: 'tratamientos faciales',
+    foto: '/public/assets/limpiezafacialprofunda.png'
   },
 
   {
     id: '2',
-    Name: 'LimpiezaFacialProfunda',
-    Descripcion: '',
-    Precio: '100',
-    Stock: '',
+    name: 'Shine Facial',
+    descripcion: 'Ohhh ohhhhh ohhh',
+    precio: '100',
+    stock: '',
     hastash: '',
-    foto: '../../'
+    foto: '/public/assets/shinefacial.png'
   },
 
   {
     id: '3',
-    Name: 'LimpiezaFacialProfunda',
-    Descripcion: '',
-    Precio: '100',
-    Stock: '',
+    name: 'LimpiezaFacialProfunda',
+    descripcion: '',
+    precio: '100',
+    stock: '',
     hastash: '',
     foto: '../../public/assets/LimpiezaPellingQuimico.png'
   },
 
   {
     id: '4',
-    Name: 'LimpiezaFacialProfunda',
-    Descripcion: '',
-    Precio: '100',
-    Stock: '',
+    name: 'LimpiezaFacialProfunda',
+    descripcion: '',
+    precio: '100',
+    stock: '',
     hastash: '',
     foto: '../../public/assets/shinefacial.png'
   },
 
   {
     id: '5',
-    Name: 'LimpiezaFacialProfunda',
-    Descripcion: 'sdkljdskjlkjfd',
-    Precio: '100',
-    Stock: '',
+    name: 'LimpiezaFacialProfunda',
+    descripcion: 'sdkljdskjlkjfd',
+    precio: '100',
+    stock: '',
     hastash: '',
     foto: '../../public/assets/limpiezaDermaplaning.png'
   },
