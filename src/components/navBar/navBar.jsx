@@ -21,23 +21,16 @@ export const ComponentesNav = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-              <NavLink className={({isActive}) =>isActive ? 'btn btn-success': 'btn btn-outline-success'} href="#features">E-SHOP</NavLink>
-              <Nav.Link href="#pricing">UBICACION</Nav.Link>
+              <NavLink className={({isActive}) =>isActive ? 'btn btn-success': 'btn btn-outline-success'} href="#features">UBICACIÓN</NavLink>
+              <Nav.Link href="https://www.instagram.com/skinstudio.ar/">CONTACTO</Nav.Link>
               
               <NavDropdown title="TRATAMIENTOS" id="collasible-nav-dropdown">
-                
-
-                <NavLink to="/categoria/tratamientosFaciales">TRATAMIENTOS FACIALES</NavLink>
+                <NavLink to="/categoria/tratamientosÑFaciales">TRATAMIENTOS FACIALES</NavLink>
                 <br></br>
                 <NavLink to="/categoria/tratamientosCorporales">TRATAMIENTOS CORPORALES</NavLink>
-
-                
-
-
-              <NavDropdown.Item href="#action/3.3">PESTAÑAS</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-              <NavDropdown.Item href="https://www.instagram.com/skinstudio.ar/">CONTACTO</NavDropdown.Item>
+            
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

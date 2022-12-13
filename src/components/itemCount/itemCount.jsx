@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import React from 'react'
 import Button from 'react-bootstrap/Button';
-import { gFetch } from '../../helpers/gFetch';
 
 
 const ItemCount = () => {
