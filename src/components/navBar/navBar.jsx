@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
-import logoskin from '../../assets/Logoskin.svg'
+import logoskin from '../../../public/assets/Logoskin.svg'
 
 export const ComponentesNav = () => {
 
