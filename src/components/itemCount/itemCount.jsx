@@ -1,28 +1,33 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 
 
 const ItemCount = () => {
-  const [fecha, setearFecha] = useState(Date())
   const [contador, setearContador] = useState(0)
 
   const CountItemMas = () => {
     setearContador(contador + 1)
-    setearFecha(Date)
   }
   const CountItemMenos = () => {
     setearContador(contador - 1)
-    setearFecha(Date)
+  }
+
+  const CountAgregarCarrito = () => {
+
+
   }
   return (
     <>
-      <center>
+      <center className='mt-5 border border-1 border-secundary p-3 rounded'>
         <Button onClick={CountItemMenos} variant="dark">MENOS</Button>
-            <h1>{contador}</h1>
+            <label>{contador}</label>
         <Button onClick={CountItemMas} variant="dark">MAS</Button>
-        </center>
+        <br></br>
+        <br></br>
+        <Button onClick={CountAgregarCarrito} variant="dark">AGREGAR CARRITO</Button>
+
+      </center>
     </>
   )
 }

@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
       
     )
 
-  }, [])
+  }, [productoId])
 
     return (
       <ItemDetail producto={producto} />
