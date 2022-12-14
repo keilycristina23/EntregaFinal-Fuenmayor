@@ -1,7 +1,19 @@
-import React from 'react'
 
-export const ItemDetail = () => {
+export const ItemDetail = ({producto}) => {
+  console.log(producto)
+
+
+
+
   return (
-    <div>ItemDetail</div>
+    <div>
+       <h3>{producto.name}</h3>
+      <img src={producto.foto}></img>
+       
+
+
+    </div>
+
   )
 }
+

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import ItemCount from '../../components/itemCount/itemCount'
-import { ItemList } from '../../components/ItemList/ItemList';
+import ItemCount from '../itemCount/itemCount'
+import { ItemList } from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 import { getProductos, getProductosCategoria } from '../../helpers/gProductos';
 
@@ -39,7 +39,8 @@ console.log(productos)
     <>
       <h1 className='text-warning'>{greetings}</h1>
      
-      { cargando ? <h2>Cargando productos...</h2> : <ItemList productos = {productos} /> }
+      {cargando ? <h2>Cargando productos...</h2> :
+      <ItemList productos={productos} />}
       <ItemCount />
       
     </>
