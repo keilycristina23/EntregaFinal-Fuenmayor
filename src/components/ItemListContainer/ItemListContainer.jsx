@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getProductos, getProductosCategoria } from "../../helpers/gProductos";
-import { Container, Row, Carousel, Spinner } from "react-bootstrap";
+import { Container, Row, Spinner, Card, Button } from "react-bootstrap";
 
 export const ItemListContainer = ({ greetings }) => {
   const [productos, setProductos] = useState([]);
@@ -28,58 +28,34 @@ export const ItemListContainer = ({ greetings }) => {
   console.log(productos);
 
   return (
-    <>
-      <Carousel>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="/public/assets/corporal.png"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src=<video>
-              '/public/assets/videos/WhatsApp Video 2022-12-14 at 12.23.52.mp4'
-            </video>
-            alt="Second slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="/public/assets/limpiezaDermapen.png"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-
-      <Container>
-        <Row>
-          {cargando ? (
-            <Spinner animation="grow" />
-          ) : (
-            <ItemList productos={productos} />
-          )}
-        </Row>
-      </Container>
-    </>
+    <div className="container text-center">
+      <div className="row justify-content-center">
+        <Card style={{ width: "20rem", height: "20rem", margin: "15rem" }}>
+          <Card.Img variant="top" src="/public/assets/Logoskin.svg" />
+          <Card.Body>
+            <br></br>
+            <Card.Title>SkinStudio</Card.Title>
+            <Card.Text>
+              "Bienvenidos a SkinStudio, tenemos 34 años de experiencia en el
+              cuidado de la piel y contamos, con una gran variedad de
+              tratamientos corporales y tratamientos faciales, trabajamos para
+              resaltar tu belleza y la salud de tu piel."
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <br></br>
+        <br></br>
+        <br></br>
+        <Container>
+          <Row>
+            {cargando ? (
+              <Spinner animation="grow" />
+            ) : (
+              <ItemList productos={productos} />
+            )}
+          </Row>
+        </Container>
+      </div>
+    </div>
   );
 };

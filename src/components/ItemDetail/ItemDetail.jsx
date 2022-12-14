@@ -6,7 +6,7 @@ export const ItemDetail = ({ producto }) => {
   console.log(producto);
 
   return (
-    <div className="" style={{ width: "18rem", margin: "1rem" }}>
+    <div style={{ width: "18rem", margin: "1rem" }}>
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={producto.foto} />
         <Card.Body>

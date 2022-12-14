@@ -8,5 +8,7 @@
   color: gray;
 }
 
+.cardhover:hover{ 
+  background-color:rgb(182, 179, 182); 
 
-
+}
