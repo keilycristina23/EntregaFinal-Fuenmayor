@@ -26,7 +26,7 @@ export const productos = [
     categoria: 'tratamientosFaciales',
     descripcion: 'Consiste en una exfoliacion que permite el barrido de células muertas de forma mecánica, brindándole a la piel mayor luminosidad y mejor penetración de principios activos. es una técnica segura y no dolorosa, con la ayuda de varias mascaras descongestívas e hidratantes le brindamos a la piel luminosidad y en conjunto con fototerapia permitimos la mayor penetración de principios activos.',
     duracion:'1:30 hora',
-    foto: '../../public/assets/limpiezaDermaplaning.png'
+    foto: '/public/assets/limpiezaDermaplaning.png'
   },
 
 
@@ -37,7 +37,7 @@ export const productos = [
     categoria: 'tratamientosFaciales',
     descripcion: 'Es un tratamiento en el cual se eliminan las impurezas de la piel. permitiendo  proceder al shock de hidratación. es ideal para pieles reactivas y con la ayuda de la alta frecuencia hay disminución de eritema y oxigenación celular, cerrando con principios activos y fototerapia.',
     duracion:'1:30 hora',
-    foto: '../../public/assets/limpiezaSoft.png'
+    foto: '/public/assets/limpiezaSoft.png'
   },
 
 
@@ -48,7 +48,7 @@ export const productos = [
     categoria: 'tratamientosFaciales',
     descripcion: 'Es un tratamiento que consiste en el barrido de células muertas con exfoliantes cosméticos,eliminando las impurezas de la piel de forma manual. no se usa aparatología por lo tanto le brindamos a la piel mayor hidratación. utilizamos varias máscaras descongestivas y cerramos con una mascarilla hidroplástica para dar brillo y firmeza.',
     duracion:'1:30 hora',
-    foto: '../../public/assets/embarazada.png'
+    foto: '/public/assets/embarazada.png'
   },
 
   {
@@ -58,7 +58,7 @@ export const productos = [
     categoria: 'tratamientosFaciales',
     descripcion: 'Es un tratamiento que consiste en la aplicación de peeling combinados. esta conformado por la utilizacion de la microdermoabrasion y topicación de ácidos frutales (aha), brindando así luminosidad, uniformidad en la tonalidad de la piel por ausencia de impurezas y el barrido de celulas   muertas. cerrando con fototerapia.',
     duracion:'1:30 hora',
-    foto: '../../public/assets/LimpiezaPellingQuimico.png'
+    foto: '/public/assets/LimpiezaPellingQuimico.png'
   },
 
 
@@ -89,7 +89,7 @@ export const productos = [
     categoria: 'tratamientosCorporales',
     descripcion:'Es un tratamiento que consiste en la aplicación de peeling combinados en la zona de espalda y glúteos. esta conformado por la utilización de microdermoabrasión y topicación de ácidos frutales (aha), brindándole a la piel mayor luminosidad y mejor penetración de principios activos. facilitando así la extracción de comedones,  proporcionando mayor suavidad y uniformidad. cerramos con hidratación profunda.',
     duracion:'1:30 hora',
-    foto: '../../public/assets/limpiezaespaldaglúteospeelingqui.png'
+    foto: '/public/assets/limpiezaespaldaglúteospeelingqui.png'
   },
 
 
@@ -100,7 +100,7 @@ export const productos = [
     categoria:'tratamientosCorporales',
     descripcion: 'Es un tratamiento que consiste en la regeneración celular de la primera capa de la piel, por medio de exfoliación mecánica con productos frutales. luego procedemos a la aplicación de la microdermoabrasión en todo el cuerpo. esto permite acelerar la reparación de la piel y estimular la circulación sanguínea. brindando así mayor suavidad, uniformidad en la tonalidad de la piel. cerramos con un breve masaje relajante.',
     duracion:'1:30 hora',
-    foto: '../../public/assets/dermaplaning.acidos.png',
+    foto: '/public/assets/dermaplaning.acidos.png',
   },
   
   
@@ -111,7 +111,7 @@ export const productos = [
     categoria: 'tratamientosCorporales',
     descripcion: 'Es un tratamiento que consiste en la regeneración celular de la primera capa de la piel, por medio de exfoliación mecánica con productos frutales. luego procedemos a la aplicación de la microdermoabrasión en todo el cuerpo. esto permite acelerar la reparación de la piel y estimular la circulación sanguínea. brindando así mayor suavidad, uniformidad en la tonalidad de la piel. cerramos con un breve masaje relajante.',
     duracion:'1:30 hora',
-    foto: '../../public/assets/renovacióncorporal.png',
+    foto: '/public/assets/renovacióncorporal.png',
   },
 
 

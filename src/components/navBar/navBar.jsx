@@ -23,7 +23,7 @@ export const ComponentesNav = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link className="nav-links" href="/">
-              HOME
+              INICIO
             </Nav.Link>
             <Nav.Link
               className="nav-links"
