@@ -14,11 +14,15 @@ export const CartContainer = () => {
             <img src={producto.foto} alt="" className="w-25" />
             Nombre-{producto.name}
             Precio-{producto.precio}
-            <button className="btn btn-dark" onClick={borrarProducto}>
+            stock-{producto.stock}
+            <button className="btn btn-dark" onClick={() => borrarProducto}>
               X
             </button>
           </li>
-          <button className="btn btn-outline-danger" onClick={vaciarCarrito}>
+          <button
+            className="btn btn-outline-danger"
+            onClick={() => vaciarCarrito}
+          >
             Vaciar carrito
           </button>
         </ul>

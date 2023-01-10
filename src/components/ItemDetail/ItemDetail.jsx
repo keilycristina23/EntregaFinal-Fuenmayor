@@ -34,7 +34,7 @@ export const ItemDetail = ({ producto }) => {
         {cantidad === 0 ? (
           <Card.Body>
             <Card.Link>
-              <ItemCount stock={6} initial={1} onAdd={onAdd} />
+              <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />
             </Card.Link>
           </Card.Body>
         ) : (

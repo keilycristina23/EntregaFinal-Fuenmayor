@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-export const ItemCount = ({ stock = 6, initial = 1, onAdd }) => {
+export const ItemCount = ({ stock, initial = 1, onAdd }) => {
   const [contador, setearContador] = useState(initial);
 
   const CountItemMas = () => {
