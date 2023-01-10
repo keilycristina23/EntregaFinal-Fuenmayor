@@ -4,12 +4,12 @@ export const CartContext = createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
 
-const isInCart = (id) => {
-  return cartList.some((el) => el.id === id);
-};
-
 export const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
+
+  const isInCart = (id) => {
+    return cartList.some((el) => el.id === id);
+  };
 
   const agregarCarrito = (producto, cantidad) => {
     const newObj = {
@@ -27,11 +27,18 @@ export const CartContextProvider = ({ children }) => {
       setCartList([...cartList, newObj]);
     }
   };
+
+  const vaciarCarrito = () => setCartList([]);
+
+  const borrarProducto = () => setCartList([]);
+
   return (
     <CartContext.Provider
       value={{
         cartList,
         agregarCarrito,
+        vaciarCarrito,
+        borrarProducto,
       }}
     >
       {children}

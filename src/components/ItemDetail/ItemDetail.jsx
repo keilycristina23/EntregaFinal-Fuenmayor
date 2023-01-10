@@ -4,6 +4,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Input from "../Input/Input";
 import { useCartContext } from "../contexts/CartContext";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 export const ItemDetail = ({ producto }) => {
   console.log(producto);
 
@@ -12,6 +14,7 @@ export const ItemDetail = ({ producto }) => {
 
   const onAdd = (cantidad) => {
     alert(`cantidad de productos seleccionado:${cantidad}`);
+    setCantidad(cantidad);
     agregarCarrito(producto, cantidad);
   };
   console.log(cartList);
@@ -35,7 +38,7 @@ export const ItemDetail = ({ producto }) => {
             </Card.Link>
           </Card.Body>
         ) : (
-          <link to={"cart"}>Ir al carrito </link>
+          <Link to={"/cart"}>Ir al carrito </Link>
         )}
       </Card>
       <Input />

@@ -6,7 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../CartWidget/CartWidget";
 import logoskin from "../../../public/assets/Logoskin.svg";
 import "./NavBar.css";
-import { CartContainer } from "../CartContainer/CartContainer";
+import { Link } from "react-router-dom";
 
 export const ComponentesNav = () => {
   return (
@@ -16,7 +16,7 @@ export const ComponentesNav = () => {
       style={{ background: "white", borderBottom: "1px solid #E5E8E8" }}
     >
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           {" "}
           <img src={logoskin} alt="logo" style={{ width: "5rem" }} />
         </Navbar.Brand>
@@ -55,9 +55,9 @@ export const ComponentesNav = () => {
           </Nav>
 
           {"0"}
-          <Nav.Link className="nav-links" href="/cart">
+          <Link to="/cart">
             <CartWidget />
-          </Nav.Link>
+          </Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
