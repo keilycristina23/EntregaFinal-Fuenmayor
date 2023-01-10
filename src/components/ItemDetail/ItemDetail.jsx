@@ -1,10 +1,19 @@
-import ItemCount from "../itemCount/itemCount";
+import { ItemCount } from "../itemCount/itemCount";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import Input from "../Input/Input";
+import { useCartContext } from "../contexts/CartContext";
 
 export const ItemDetail = ({ producto }) => {
   console.log(producto);
 
+  const { agregarCarrito, cartList } = useCartContext();
+
+  const onAdd = (cantidad) => {
+    alert(`cantidad de productos seleccionado:${cantidad}`);
+    agregarCarrito({ ...producto, cantidad });
+  };
+  console.log(cartList);
   return (
     <div style={{ width: "18rem", margin: "1rem" }}>
       <Card style={{ width: "18rem" }}>
@@ -23,6 +32,8 @@ export const ItemDetail = ({ producto }) => {
           </Card.Link>
         </Card.Body>
       </Card>
+      <Input />
+      <ItemCount stock={6} initial={1} onAdd={onAdd} />
     </div>
   );
 };

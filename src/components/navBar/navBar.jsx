@@ -6,6 +6,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../CartWidget/CartWidget";
 import logoskin from "../../../public/assets/Logoskin.svg";
 import "./NavBar.css";
+import { CartContainer } from "../CartContainer/CartContainer";
 
 export const ComponentesNav = () => {
   return (
@@ -52,12 +53,11 @@ export const ComponentesNav = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Nav>
-            <Nav.Link href="#deets">
-              {"0"}
-              <CartWidget />
-            </Nav.Link>
-          </Nav>
+
+          {"0"}
+          <Nav.Link className="nav-links" href="/cart">
+            <CartWidget />
+          </Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>
