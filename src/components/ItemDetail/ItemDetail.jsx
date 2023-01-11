@@ -4,18 +4,20 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Input from "../Input/Input";
 import { useCartContext } from "../contexts/CartContext";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { ButtonCart } from "../ButtonCart/ButtonCart";
 
 export const ItemDetail = ({ producto }) => {
   console.log(producto);
 
   const [cantidad, setCantidad] = useState(0);
   const { agregarCarrito, cartList } = useCartContext();
+  const [interCart, setInterCart] = useState(true);
 
   const onAdd = (cantidad) => {
     alert(`cantidad de productos seleccionado:${cantidad}`);
     setCantidad(cantidad);
     agregarCarrito(producto, cantidad);
+    setInterCart(false);
   };
   console.log(cartList);
 
@@ -31,15 +33,13 @@ export const ItemDetail = ({ producto }) => {
           <ListGroup.Item>{producto.duracion}</ListGroup.Item>
           <ListGroup.Item>{producto.precio}</ListGroup.Item>
         </ListGroup>
-        {cantidad === 0 ? (
-          <Card.Body>
-            <Card.Link>
-              <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />
-            </Card.Link>
-          </Card.Body>
-        ) : (
-          <Link to={"/cart"}>Ir al carrito </Link>
-        )}
+        <Card.Body>
+          {interCart ? (
+            <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />
+          ) : (
+            <ButtonCart />
+          )}
+        </Card.Body>
       </Card>
       <Input />
     </div>

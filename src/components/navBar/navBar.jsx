@@ -16,45 +16,31 @@ export const ComponentesNav = () => {
       style={{ background: "white", borderBottom: "1px solid #E5E8E8" }}
     >
       <Container>
-        <Navbar.Brand href="/">
+        <Link to="/">
           {" "}
           <img src={logoskin} alt="logo" style={{ width: "5rem" }} />
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="nav-links" href="/">
-              INICIO
-            </Nav.Link>
-            <Nav.Link
-              className="nav-links"
-              href="https://www.instagram.com/skinstudio.ar/"
-            >
-              CONTACTO
-            </Nav.Link>
-            <NavDropdown
+            <Link to="/">INICIO</Link>
+            <Link to="https://www.instagram.com/skinstudio.ar/">CONTACTO</Link>
+            <Link
               className={({ isActive }) =>
                 isActive ? "navlink-activo" : "navlink-inactivo"
               }
               title="TRATAMIENTOS"
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item
-                className="nav-links"
-                href="/categoria/tratamientosFaciales"
-              >
+              <Link to="/categoria/tratamientosFaciales">
                 TRATAMIENTOS FACIALES
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                className="nav-links"
-                href="/categoria/tratamientosCorporales"
-              >
+              </Link>
+              <Link to="/categoria/tratamientosCorporales">
                 TRATAMIENTOS CORPORALES
-              </NavDropdown.Item>
-            </NavDropdown>
+              </Link>
+            </Link>
           </Nav>
 
-          {"0"}
           <Link to="/cart">
             <CartWidget />
           </Link>

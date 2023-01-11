@@ -4,7 +4,8 @@ import { useEffect } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { getProductos, getProductosCategoria } from "../../helpers/gProductos";
-import { Container, Row, Spinner, Card, Button } from "react-bootstrap";
+import { Container, Row, Card } from "react-bootstrap";
+import Loader from "./Loader/Loader";
 
 export const ItemListContainer = ({ greetings }) => {
   const [productos, setProductos] = useState([]);
@@ -48,11 +49,7 @@ export const ItemListContainer = ({ greetings }) => {
         <br></br>
         <Container>
           <Row>
-            {cargando ? (
-              <Spinner animation="grow" />
-            ) : (
-              <ItemList productos={productos} />
-            )}
+            {cargando ? <Loader /> : <ItemList productos={productos} />}
           </Row>
         </Container>
       </div>
