@@ -3,7 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { getProducto } from "../../helpers/gProductos";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
-import Loader from "../ItemListContainer/Loader/Loader";
+import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});

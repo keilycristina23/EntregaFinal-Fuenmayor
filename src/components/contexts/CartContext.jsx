@@ -6,17 +6,27 @@ export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
   const [cartList, setCartList] = useState([]);
-};
 
-const agregarCarrito = (item) => {
-  const notDuplicate = cartList.findIndex((product) => product.id === item.id);
-  if (notDuplicate === -1) {
-    setCartList([...cartList, item]);
-  } else {
-    cartList[notDuplicate].cantidad += item.cantidad;
+  const isInCart = (id) => {
+    return cartList.some((el) => el.id === id);
+  };
 
-    setCartList([...cartList]);
-  }
+  const agregarCarrito = (producto, cantidad) => {
+    const newObj = {
+      ...producto,
+      cantidad,
+    };
+    if (isInCart(newObj.id)) {
+      cartList.map((el) => {
+        if (el.id === newObj.id) {
+          el.cantidad += newObj.cantidad;
+        }
+        return el;
+      });
+    } else {
+      setCartList([...cartList, newObj]);
+    }
+  };
 
   const vaciarCarrito = () => setCartList([]);
 
