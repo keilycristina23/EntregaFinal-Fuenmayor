@@ -2,7 +2,6 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import CartWidget from "../CartWidget/CartWidget";
 import logoskin from "../../../public/assets/Logoskin.svg";
 import "./NavBar.css";
@@ -24,14 +23,7 @@ export const ComponentesNav = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link to="/">INICIO</Link>
-            <Link to="https://www.instagram.com/skinstudio.ar/">CONTACTO</Link>
-            <Link
-              className={({ isActive }) =>
-                isActive ? "navlink-activo" : "navlink-inactivo"
-              }
-              title="TRATAMIENTOS"
-              id="collasible-nav-dropdown"
-            >
+            <Link>
               <Link to="/categoria/tratamientosFaciales">
                 TRATAMIENTOS FACIALES
               </Link>

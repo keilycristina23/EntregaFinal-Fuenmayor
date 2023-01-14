@@ -6,27 +6,58 @@ import { useParams } from "react-router-dom";
 import { getProductos, getProductosCategoria } from "../../helpers/gProductos";
 import { Container, Row, Card } from "react-bootstrap";
 import Loader from "../Loader/Loader";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  getFirestore,
+  limit,
+  orderBy,
+  query,
+  where,
+} from "firebase/firestore";
 
 export const ItemListContainer = ({ greetings }) => {
   const [productos, setProductos] = useState([]);
+  const [producto, setProducto] = useState({});
   const [cargando, setCargando] = useState(true);
   const { categoriaId } = useParams();
 
   useEffect(() => {
+    const db = getFirestore();
+    const queryCollection = collection(db, "productos");
     if (categoriaId) {
-      getProductosCategoria(categoriaId).then((productos) => {
-        setProductos(productos);
-        setCargando(false);
-      });
+      const queryFiltrada = query(
+        queryCollection,
+        where("categoria", "==", categoriaId)
+      );
+      getDocs(queryFiltrada)
+        .then((respuesta) =>
+          setProductos(
+            respuesta.docs.map((producto) => ({
+              id: producto.id,
+              ...producto.data(),
+            }))
+          )
+        )
+        .catch((err) => console.log(err))
+        .finally(() => setCargando(false));
     } else {
-      getProductos().then((productos) => {
-        setProductos(productos);
-        setCargando(false);
-      });
+      getDocs(queryCollection)
+        .then((respuesta) =>
+          setProductos(
+            respuesta.docs.map((producto) => ({
+              id: producto.id,
+              ...producto.data(),
+            }))
+          )
+        )
+        .catch((err) => console.log(err))
+        .finally(() => setCargando(false));
     }
   }, [categoriaId]);
-
-  console.log(productos);
+  console.log(producto);
 
   return (
     <div className="container text-center">

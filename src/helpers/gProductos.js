@@ -119,7 +119,7 @@ export const productos = [
   {
     id: '11',
     name: 'RENOVACIÓN CORPORAL',
-    precio: 'Ñ5200',
+    precio: '5200',
     categoria: 'tratamientosCorporales',
     descripcion: 'Es un tratamiento que consiste en la regeneración celular de la primera capa de la piel, por medio de exfoliación mecánica con productos frutales. luego procedemos a la aplicación de la microdermoabrasión en todo el cuerpo. esto permite acelerar la reparación de la piel y estimular la circulación sanguínea. brindando así mayor suavidad, uniformidad en la tonalidad de la piel. cerramos con un breve masaje relajante.',
     duracion:'1:30 hora',

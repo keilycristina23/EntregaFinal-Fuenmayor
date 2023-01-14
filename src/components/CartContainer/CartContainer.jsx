@@ -1,14 +1,13 @@
 import React from "react";
 import { useCartContext } from "../contexts/CartContext";
+import InputFormu from "../InputFormu/InputFormu";
 
 export const CartContainer = () => {
-  const { cartList, borrarProducto, vaciarCarrito } = useCartContext();
-  console.log(cartList);
-
-  const { precioTotal } = useCartContext();
+  const { cartList, borrarProducto, vaciarCarrito, precioTotal } =
+    useCartContext();
 
   return (
-    <div>
+    <>
       <h2>carrito</h2>
       {cartList.map((producto) => (
         <ul key={producto.id}>
@@ -31,6 +30,7 @@ export const CartContainer = () => {
         Vaciar carrito
       </button>
       <br></br>
-    </div>
+      <InputFormu />
+    </>
   );
 };

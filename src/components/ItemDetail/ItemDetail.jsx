@@ -1,7 +1,6 @@
 import { ItemCount } from "../itemCount/itemCount";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import Input from "../Input/Input";
 import { useCartContext } from "../contexts/CartContext";
 import { useState } from "react";
 import { ButtonCart } from "../ButtonCart/ButtonCart";
@@ -20,6 +19,7 @@ export const ItemDetail = ({ producto }) => {
     setInterCart(false);
   };
   console.log(cartList);
+  console.log(producto);
 
   return (
     <div style={{ width: "18rem", margin: "1rem" }}>
@@ -41,7 +41,6 @@ export const ItemDetail = ({ producto }) => {
           )}
         </Card.Body>
       </Card>
-      <Input />
     </div>
   );
 };

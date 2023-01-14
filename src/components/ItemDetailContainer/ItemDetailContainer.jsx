@@ -1,7 +1,7 @@
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import { getProducto } from "../../helpers/gProductos";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import Loader from "../Loader/Loader";
 
@@ -11,8 +11,14 @@ const ItemDetailContainer = () => {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    getProducto(productoId)
-      .then((item) => setProducto(item))
+    const db = getFirestore();
+    const queryDoc = doc(db, "productos", productoId);
+
+    getDoc(queryDoc)
+      .then((respuesta) =>
+        setProducto({ id: respuesta.id, ...respuesta.data() })
+      )
+      .catch((err) => console.log(err))
       .finally(() => setCargando(false));
   }, [productoId]);
 
