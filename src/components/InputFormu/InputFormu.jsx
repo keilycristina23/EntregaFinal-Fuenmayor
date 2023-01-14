@@ -10,7 +10,7 @@ const InputFormu = () => {
     useCartContext();
 
   const [dataForm, setDataForm] = useState({
-    nombre: "",
+    name: "",
     apellido: "",
     telefono: "",
     correo: "",
@@ -20,7 +20,7 @@ const InputFormu = () => {
   const handleChange = (e) => {
     setDataForm({
       ...dataForm,
-      [e.target.nombre]: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -32,8 +32,8 @@ const InputFormu = () => {
 
     orden.buyer = dataForm;
 
-    orden.items = cartList.map(({ nombre, id, precio }) => ({
-      nombre,
+    orden.items = cartList.map(({ name, id, precio }) => ({
+      name,
       id,
       precio,
     }));
@@ -67,11 +67,12 @@ const InputFormu = () => {
 
         <Form.Label>Telefono</Form.Label>
         <Form.Control
-          type="text"
+          type="number"
           name="telefono"
           value={dataForm.telefono}
           placeholder="Ingresa tu número de telefono"
           onChange={handleChange}
+  
         />
       </Form.Group>
 
