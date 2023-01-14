@@ -12,7 +12,7 @@ export const ComponentesNav = () => {
     <Navbar
       collapseOnSelect
       expand="lg"
-      style={{ background: "white", borderBottom: "1px solid #E5E8E8" }}
+      style={{ background: "red", borderBottom: "1px solid #E5E8E8" }}
     >
       <Container>
         <Link to="/">

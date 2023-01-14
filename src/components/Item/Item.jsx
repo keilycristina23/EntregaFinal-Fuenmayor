@@ -10,7 +10,7 @@ export const Item = ({ producto }) => {
         <Card className="cardhover">
           <Card.Img variant="top" src={producto.foto} />
           <Card.Body>
-            <Card.Title>{producto.name}</Card.Title>
+            <Card.Title>{producto.nombre}</Card.Title>
           </Card.Body>
         </Card>
       </Link>

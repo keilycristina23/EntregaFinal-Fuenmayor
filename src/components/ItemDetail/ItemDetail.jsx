@@ -26,7 +26,7 @@ export const ItemDetail = ({ producto }) => {
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={producto.foto} />
         <Card.Body>
-          <Card.Title>{producto.name}</Card.Title>
+          <Card.Title>{producto.nombre}</Card.Title>
           <Card.Text>{producto.descripcion}</Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">

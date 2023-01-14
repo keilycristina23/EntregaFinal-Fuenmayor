@@ -12,10 +12,8 @@ export const CartContainer = () => {
       {cartList.map((producto) => (
         <ul key={producto.id}>
           <li>
-            <img src={producto.foto} alt="" className="w-25" />
-            Nombre-{producto.name}
-            Precio-{producto.precio}
-            Cantidad-{producto.cantidad}
+            <img src={producto.foto} alt="" className="w-25" />-
+            {producto.precio}-{producto.nombre}-{producto.cantidad}
             <button
               className="btn btn-dark"
               onClick={() => borrarProducto(producto.id)}
@@ -25,7 +23,7 @@ export const CartContainer = () => {
           </li>
         </ul>
       ))}
-      <h1>{precioTotal()}</h1>
+      <h1>Total: {precioTotal()}</h1>
       <button className="btn btn-outline-danger" onClick={vaciarCarrito}>
         Vaciar carrito
       </button>

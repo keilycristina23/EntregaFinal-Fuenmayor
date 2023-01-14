@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
-import { getProductos, getProductosCategoria } from "../../helpers/gProductos";
 import { Container, Row, Card } from "react-bootstrap";
 import Loader from "../Loader/Loader";
 import {

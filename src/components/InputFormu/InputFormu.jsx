@@ -4,18 +4,20 @@ import Form from "react-bootstrap/Form";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useCartContext } from "../contexts/CartContext";
 import { useState } from "react";
+import { IdAlert } from "../IdAlert/IdAlert";
 
 const InputFormu = () => {
-  const { cartList, borrarProducto, vaciarCarrito, precioTotal } =
-    useCartContext();
+  const { cartList } = useCartContext();
 
   const [dataForm, setDataForm] = useState({
-    name: "",
+    nombre: "",
     apellido: "",
     telefono: "",
-    correo: "",
-    validarCorreo: "",
   });
+
+  const [email1, setEmail1] = useState("");
+  const [email2, setEmail2] = useState("");
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setDataForm({
@@ -24,16 +26,32 @@ const InputFormu = () => {
     });
   };
 
-  console.log(dataForm);
+  const handleEmail1Change = (e) => {
+    setEmail1(e.target.value);
+    setDataForm({ ...dataForm, email1: e.target.value });
+  };
+
+  const handleEmail2Change = (e) => {
+    setEmail2(e.target.value);
+    setDataForm({ ...dataForm, email2: e.target.value });
+  };
+
   const crearOrden = (evt) => {
     evt.preventDefault();
+
+    if (email1 != email2) {
+      setError("Correo no coinciden");
+      return;
+    }
+
+    setError("");
 
     const orden = {};
 
     orden.buyer = dataForm;
 
-    orden.items = cartList.map(({ name, id, precio }) => ({
-      name,
+    orden.items = cartList.map(({ nombre, id, precio }) => ({
+      nombre,
       id,
       precio,
     }));
@@ -72,7 +90,6 @@ const InputFormu = () => {
           value={dataForm.telefono}
           placeholder="Ingresa tu número de telefono"
           onChange={handleChange}
-  
         />
       </Form.Group>
 
@@ -81,23 +98,26 @@ const InputFormu = () => {
         <Form.Control
           type="text"
           name="correo"
-          value={dataForm.correo}
+          value={email1}
           placeholder="Ingresa tu correo electronico"
-          onChange={handleChange}
+          onChange={handleEmail1Change}
         />
         <Form.Label>Validar Correo</Form.Label>
         <Form.Control
           type="text"
           name="validarCorreo"
-          value={dataForm.validarCorreo}
+          value={email2}
           placeholder="Valida tu correo electronico"
-          onChange={handleChange}
+          onChange={handleEmail2Change}
         />
       </Form.Group>
-
-      <Button variant="primary" type="submit">
-        Ingresar
-      </Button>
+      <center>
+        <Button variant="primary" type="submit">
+          Ingresar
+          {/*           <IdAlert />
+           */}{" "}
+        </Button>
+      </center>
     </Form>
   );
 };
