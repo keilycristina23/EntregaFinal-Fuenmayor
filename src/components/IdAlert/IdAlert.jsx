@@ -1,24 +1,25 @@
+import Alert from "react-bootstrap/Alert";
 import React from "react";
+import { FcLikePlaceholder } from "react-icons/fc";
 
-export const IdAlert = ({ }) => {
-  const [show, setShow] = useState(true);
+import "./IdAlert.css";
 
+export const IdAlert = ({ id }) => {
   return (
     <>
-      <Alert show={show} variant="success">
-        <Alert.Heading>How's it going?!</Alert.Heading>
-        <p>¡Hola! El carro de compra esta vacio.</p>
-        <hr />
-        <div className="d-flex justify-content-end">
-          <link to="/">
-            <Button onClick={() => setShow(false)} variant="outline-success">
-              Ir a Inicio
-            </Button>
-          </link>
-        </div>
-      </Alert>
-
-      {!show && <Button onClick={() => setShow(true)}>Show Alert</Button>}
+      {["secondary"].map((variant) => (
+        <center>
+          <div className="buyorderdiv">
+            <Alert key={variant} variant={variant}>
+              Tu orden de compra es:
+              <br></br>#{id}
+              <br></br>
+              Tu compra se ha generado ¡SATISFACTORIAMENTE!
+            </Alert>
+            <FcLikePlaceholder className="compraIcon" />
+          </div>
+        </center>
+      ))}
     </>
   );
 };

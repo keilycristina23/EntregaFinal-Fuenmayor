@@ -7,12 +7,8 @@ import { Container, Row, Card } from "react-bootstrap";
 import Loader from "../Loader/Loader";
 import {
   collection,
-  doc,
-  getDoc,
   getDocs,
   getFirestore,
-  limit,
-  orderBy,
   query,
   where,
 } from "firebase/firestore";
@@ -56,7 +52,6 @@ export const ItemListContainer = ({ greetings }) => {
         .finally(() => setCargando(false));
     }
   }, [categoriaId]);
-  console.log(producto);
 
   return (
     <div className="container text-center">

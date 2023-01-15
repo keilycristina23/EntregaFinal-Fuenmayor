@@ -7,6 +7,8 @@ export const ButtonCart = () => {
     <>
       <Link to="/cart">
         <Button variant="dark">Ir a Cart</Button>
+        <br></br>
+        <br></br>
       </Link>
       <Link to="/">
         <Button variant="dark">Seguir Comprando</Button>

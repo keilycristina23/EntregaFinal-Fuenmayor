@@ -6,10 +6,8 @@ import { useState } from "react";
 import { ButtonCart } from "../ButtonCart/ButtonCart";
 
 export const ItemDetail = ({ producto }) => {
-  console.log(producto);
-
   const [cantidad, setCantidad] = useState(0);
-  const { agregarCarrito, cartList } = useCartContext();
+  const { agregarCarrito } = useCartContext();
   const [interCart, setInterCart] = useState(true);
 
   const onAdd = (cantidad) => {
@@ -18,20 +16,19 @@ export const ItemDetail = ({ producto }) => {
     agregarCarrito(producto, cantidad);
     setInterCart(false);
   };
-  console.log(cartList);
-  console.log(producto);
 
   return (
-    <div style={{ width: "18rem", margin: "1rem" }}>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={producto.foto} />
+    <div className="grid"
+      style={{ width: "1rem", margin: "3rem", padding: "1rem" }}>
+      <Card style={{ width: "20rem", padding: "2rem" }}>
+        <Card.Img variant="top"  src={producto.foto}  />
         <Card.Body>
-          <Card.Title>{producto.nombre}</Card.Title>
+          <h3>{producto.nombre} </h3>
           <Card.Text>{producto.descripcion}</Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroup.Item>{producto.duracion}</ListGroup.Item>
-          <ListGroup.Item>{producto.precio}</ListGroup.Item>
+          <ListGroup.Item>Precio: {producto.precio}</ListGroup.Item>
         </ListGroup>
         <Card.Body>
           {interCart ? (
@@ -44,3 +41,10 @@ export const ItemDetail = ({ producto }) => {
     </div>
   );
 };
+
+
+<div class="grid">
+  <div class="g-col-4">.g-col-4</div>
+  <div class="g-col-4">.g-col-4</div>
+  <div class="g-col-4">.g-col-4</div>
+</div>;

@@ -4,9 +4,8 @@ import Form from "react-bootstrap/Form";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useCartContext } from "../contexts/CartContext";
 import { useState } from "react";
-import { IdAlert } from "../IdAlert/IdAlert";
 
-const InputFormu = () => {
+const InputFormu = ({ setOrdenId }) => {
   const { cartList } = useCartContext();
 
   const [dataForm, setDataForm] = useState({
@@ -59,7 +58,9 @@ const InputFormu = () => {
     const db = getFirestore();
     const queryOrden = collection(db, "ordenes");
 
-    addDoc(queryOrden, orden).then((resp) => console.log(resp));
+    addDoc(queryOrden, orden).then(({ id }) => {
+      setOrdenId(id);
+    });
   };
 
   return (
@@ -112,10 +113,8 @@ const InputFormu = () => {
         />
       </Form.Group>
       <center>
-        <Button variant="primary" type="submit">
+        <Button variant="dark" type="submit">
           Ingresar
-          {/*           <IdAlert />
-           */}{" "}
         </Button>
       </center>
     </Form>
